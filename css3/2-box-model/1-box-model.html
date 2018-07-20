@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html style="background-color:red;">
+	<head>
+	</head>
+	<body><!--박스는 바깥에서부터 마진, 경계, 패딩, 컨텐츠로 구성된다.-->
+		  <!--마진과 패딩은 투명하며, 패딩은 배경의 영향을 받지만 마진은 배경과 독립적으로 투명하다.-->
+		<p style="border-width:5px; border-style:dotted solid double dashed; border-color:rgb(0,255,0);"><!--경계선 폭, 스타일, 컬러 순으로 지정해주는게 좋다.-->
+			box model
+		</p>
+		<p style="border-radius:25px; border-width:5px; border-style:dotted; border-color:#00ff00; padding:10px 20px"><!--border-radius 속성은 둥근 부분의 반지름을 설정한다. 만약 글자가 밖으로 나간경우 패딩을 적절히 줘서 해결할 수 있다.-->
+			round border
+		</p>
+		<p style="width:300px; height:50px; background-color:rgb(0,255,0); box-shadow:20px 10px 5px #666666;"> <!--box-shadow 속성은 가로오프셋, 세로오프셋, 번짐, 그림자색상 순으로 나열-->
+			shadow box model
+		</p>
+		<p style="margin:0px; padding:0px; background-color:yellow;"> margin:0px, padding:0px </p>
+		<p style="margin:20px; padding:40px; background-color:green;"> margin:20px, padding:40px </p>
+		<p style="margin:20px; border:5px solid green; padding:10px; width:200px; background-color:yellow;"> added width is 270px. </p>
+		<p style="text-align:center; border:5px solid green;"> 인라인 요소 중앙 정렬 </p>
+		<p style="margin-left:auto; margin-right:auto; width:50%; border:5px solid green;"> 블록 요소 중앙 정렬 </p>
+	</body>
+</html>
