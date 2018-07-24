@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>exercise3</title>
+		<style>
+			div {
+				width:264px;
+				background-color:yellow;
+				border:8px solid black;
+			}
+			table {
+				empty-cells:hide;
+			}
+			td {
+				background-color:red;
+				border:8px solid black;
+				width:30px;
+				padding:15px 10px 15px 10px;
+				text-align:center;
+				font-size:2em;
+				font-weight:bold;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+		<table>
+			<tr>
+				<td>1</td>
+				<td rowspan="2">2</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td style="background-color:transparent">5</td>
+			</tr>
+		</table>
+		</div>
+	</body>
+</html>
+
+<!-- (264=8*2+30+10*2)*4 -->
