@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>position of unit</title>
+		<style>
+			p {
+				background-color:lightblue;
+				width:200px; height:50px;
+			}
+			#one {
+				background-color:cyan;
+				width:200px; height:50px;
+				position:static;
+			}
+			#two {
+				background-color:yellow;
+				width:200px; height:50px;
+				position:relative;
+			}
+			#three {
+				background-color:green;
+				width:200px; height:50px;
+				position:absolute;
+				top:75px; left:100px;
+				z-index:-1;
+			}
+			#three2 {
+				background-color:lightgreen;
+				width:200px; height:50px;
+				position:absolute;
+				top:85px; left:110px;
+				z-index:1;
+			}	
+			#four {
+				background-color:aqua;
+				width:200px; height:50px;
+				position:fixed;
+				top:0px; right:0px;
+			}
+			#five {
+				background-color:aqua;
+				width:200px; height:50px;
+				position:static;
+				float:left;
+			}
+			#six {
+				background-color:aqua;
+				width:200px; height:50px;
+				float:right;
+			}
+			div {
+				overflow:scroll;
+				height:120px;
+			}
+		</style>
+	</head>
+	<body>	
+		<p> block 1 </p>
+		<p id="one"> block 2 </p>
+		<p id="two"> block 3 </p>
+		<p id="three"> block 4 </p>
+		<p> block 5</p>
+		<p id="four"> block 6 </p>
+		<p id="three2"> block 7 </p>
+		<div>
+			<span id="five"> block 8 </span>
+			<span id="six"> block 9 </span>
+			안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.
+			<span id="five"> block 8 </span>
+			<span id="six"> block 9 </span>
+			안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.
+			<span id="five"> block 8 </span>
+			<span id="six"> block 9 </span>
+			안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.
+		</div>
+	</body>
+</html>
+
+<!--
+1. position 속성
+	static:디폴트 위치(블록 요소와 인라인 요소의 정상적인 위치), top/left/bottom/right 속성이 무시됨.
+	relative:static위치에서 offset만큼 떨어진 곳에 위치한다.
+	absolute:절대적인 곳에 위치한다. 만약 컨테이너 안에 있다면 컨테이너의 시작지점으로부터 상대적인 곳에 위치한다.
+	fixed:페이지가 스크롤되어도 움직이지 않는다.
+	relative, absolute, fixed 속성을 사용할 경우 block과 inline요소의 위치는 무시된다.
+2. top/bottom/left/right 속성
+	요소의 위치를 결정한다.(offset 개념으로)
+3. width, height 속성
+	요소의 너비와 높이를 설정한다.
+4. float 속성
+	동일한 블록 컨테이너 요소 안에서 특정 요소를 right, left, top, bottom의 위치로 떠있도록 하는 속성.
+	float 속성을 제거하려면 clear:both를 지정하면 된다.
+5. z-index 속성
+	요소들이 겹치는 경우 우선순위를 설정.(기본값 0)
+6. min-width, min-height, max-width, max-height 속성
+	브라우저가 요소의 크기를 자동으로 결정하는 경우 최대값과 최소값을 설정할 수 있다.
+7. overflow 속성
+	자식 요소가 부모 요소의 범위를 벗어났을 때 어떻게 처리할 것인지를 지정
+	hidden, scroll, auto의 속성값들이 있다.
+	주의 : position 속성값이 absolute나 fixed일 경우에만 적용된다.
+-->
