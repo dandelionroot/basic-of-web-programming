@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function guess() {
+				var answer = 53;
+				var guesstime = 0;
+				var input = document.getElementById("num").value;
+				if(input == answer) {
+					document.getElementById("result").value = "정답입니다.";
+				}
+				else if(input > answer) {
+					document.getElementById("result").value = "높습니다.";
+				}
+				else {
+					document.getElementById("result").value = "낮습니다.";
+				}
+				document.getElementById("guessnum").value++;
+			}
+		</script>
+	</head>
+	<body>
+		<h2>숫자 맞추기 게임</h2>
+		<p>이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다. 숫자는 1부터 100사이에 있습니다.</p>
+		<form>
+			숫자:
+			<input type="text" id="num" size="5" />
+			<input type="button" value="확인" onclick="guess();" /> <br />
+			추측횟수:
+			<input type="text" id="guessnum" size="5" />
+			힌트:
+			<input type="text" id="result" size="16" />
+		</form>
+	</body>
+</html>
