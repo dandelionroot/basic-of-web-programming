@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function printArray(a) {
+				document.write('[');
+				for(var i=0; i<a.length; i++)
+					document.write(a[i] + ' ');
+				document.write('] <br />');
+			}
+
+			var myArray1 = new Array();
+			myArray1[0] = "apple";
+			myArray1[1] = "banana";
+			myArray1[2] = "orange";
+
+			var myArray2 = new Array("apple", "banana", "orange");
+			var myArray3 = ["apple", "banana", "orange"];
+
+			printArray(myArray1);
+			printArray(myArray2);
+			printArray(myArray3);
+
+			var x = [1, 2, 3];
+			var y = [4, 5, 6];
+			var joined = x.concat(y);
+
+			document.write(joined + '<br />');
+			document.write(joined.indexOf(4) + '<br />');
+			joined.push(7);
+			document.write(joined + '<br />');
+			joined.pop();
+			document.write(joined + '<br />');
+			var item = joined.shift();
+			document.write(item + '<br />');
+			document.write(joined + '<br />');
+
+			var alpha = ['c', 'b', 'a'];
+			alpha.sort();
+			document.write(alpha + '<br />');
+
+			document.write(joined.slice(0,4) + '<br />'); //인덱스 0부터 4개
+
+			document.write(joined.join('+') + '<br />'); //분리자와 함께 하나의 문자열로 출력
+
+			var matrix = [
+				[1, 2, 3],
+				[4, 5, 6]
+			];
+			document.write(matrix);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
+
+<!--
+1. 자바스크립트의 배열은 세가지의 특징이 있다.
+	1> 배열의 크기가 자동으로 조절된다.
+	2> 하나의 배열에 여러가지 자료형 저장가능
+	3> 인덱스값을 초과하여 참조시 프로그램이 종료되지 않고 undefined 반환
+-->
