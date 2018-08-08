@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function process() { //id로 입력양식 접근
+				var obj = document.getElementById("target");
+				alert(obj.value);
+			}
+			function process2() { //name으로 입력양식 접근
+				var obj = document.forms[1].text2; //document.myform2.text2도 가능
+				var obj2 = document.forms[1].text3; //form요소들은 document.forms[] 배열에 차례대로 할당되어 있다.
+				alert(obj.value + ' and ' + obj2.value);
+			}
+			function process3() { //tag로 요소 접근
+				var list = document.getElementsByTagName('ul')[0]; //getElementsByTagName은 괄호안의 태그네임을 가지고 있는 모든 요소들을 배열의 형태로 반환한다. 그 중 첫번째
+				var allItems = list.getElementsByTagName('li');
+
+				for(var i=0; allItems.length; i++)
+					alert(allItems[i].innerHTML);//allItems[i].firstChild.data도 가능 -> 첫 번째 자식 노드는 텍스트 데이터를 가지고 있는 노드이다. 어떤 노드가 텍스트 데이터를 가지고 있으면, 텍스트 데이터는 첫 번째 자식 노드로 저장된다.
+			}
+		</script>
+	</head>
+	<body>
+		<form name="myform">
+			<input type="text" name="text1" id="target">
+			<input type="submit" value="제출" onclick="process();">
+		</form>
+		<form name="myform2">
+			<input type="text" name="text2"><br />
+			<input type="text" name="text3">
+			<input type="button" value="제출" onclick="process2();">
+		</form>
+		<ul>
+			<li>List item 1</li>
+			<li>List item 2</li>
+			<li>List item 3</li>
+			<li>List item 4</li>
+			<li>List item 5</li>
+		</ul>
+		<input type="button" value="get List items !" onclick = "process3();">
+	</body>
+</html>
+
+<!--
+자식노드와 부모노드의 관계를 이용하여 노드에 접근하는 방법
+1. childNodes : 한 요소의 모든 자식 요소에 접근 가능. 배열이 반환된다.
+2. firstChild : childNodes[0]
+3. lastChild : childNodes[childNodes.length-1]
+4. parentNode : 현재 노드의 부모 노드 반환
+5. nextSibling : 현재 노드의 다음 형제노드 반환
+6. previousSibling : 현재 노드의 이전 형제노드 반환
+-->

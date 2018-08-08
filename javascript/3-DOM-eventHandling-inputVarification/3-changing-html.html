@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function get() {
+				var val = document.getElementById('content');
+				alert(val.innerHTML);
+			}
+			function set(str) { //내용변경
+				document.getElementById('ex').firstChild.data = str;//또는 innerHTML
+			}
+			function set2(str) { //속성변경
+				document.getElementById("attribute").href = str;
+			}
+			function set3() { //스타일변경
+				var el = document.getElementById("style");
+				el.style.color = "red";
+				el.style.fontFamily = "Century Schoolbook";
+				el.style.fontStyle = "italic";
+			}
+		</script>
+	</head>
+	<body>
+		<div id="content">This is div.</div>
+		<input type="button" value="get" onclick="get()"><br />
+		<input type="button" value="change" onclick="set('changed')"><br /><br />
+
+		<a id="attribute" href="https://www.naver.com">웹사이트로 가기</a><br />
+		<input type="button" value="웹사이트 변경" onclick="set2('https://changtfolio.cf')"><br /><br />
+
+		<p id="style">This is paragraph.</p>
+		<input type="button" value="스타일 변경" onclick="set3()">
+	</body>
+</html>
+
+<!--
+1. 자바스크립트를 이용하여 HTML의 DOM을 변경할 때, 세 가지의 경우가 있다.
+	1> 요소의 내용
+	2> 요소의 속성
+	3> 요소의 스타일
+-->
