@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function replace() {
+				location.replace("http://www.google.com");
+			}
+		</script>
+	</head>
+	<body>
+		<a href="#" onclick="replace()">이동하기</a>
+	</body>
+</html>
+<!--
+1. location 객체는 window객체의 자식노드이며 URL에 대한 정보를 가지고 있다.
+2. location객체의 속성
+	1> hash : URL중에서 앵커 부분 반환
+	2> host : URL중에서 hostname과 port 반환
+	3> hostname : URL중에서 hostname반화ㅏㄴ
+	4> href : 전체 url 반환
+	5> pathname : URL중에서 경로 반환
+	6> port : URL중에서 port 반환
+	7> protocol : URL중에서 protocol부분 반환
+	8> search : URL중에서 query부분 반환
+3. location객체의 메서드
+	1> assign() : 새로운 문서 로드
+	2> reload() : 현재 문서 다시 로드
+	3> replace() : 현재문서를 새로운문서로 대체
+-->

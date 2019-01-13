@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function checkBlank(el) {
+				if (el.value.length == 0) {
+					alert('field is empty.');
+				}
+				else {
+					var node = document.createTextNode("입력 완성");
+					var parent = document.forms[0];
+					parent.appendChild(node);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form>
+			이름 : <input type="text" id='user' />
+			<input type="button" onclick="checkBlank(document.getElementById('user'))" value="check" />
+		</form>
+	</body>
+</html>

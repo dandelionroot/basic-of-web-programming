@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function maxopen(url, winattributes) {
+				var maxwindow = window.open(url, '', winattributes);
+				maxwindow.moveTo(0,0);
+				maxwindow.resizeTo(screen.availWidth, screen.availHeight);
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="maxopen('https://changtfolio.cf', 'resize=1, scrollbars=1, status=1')">전체 화면 보기</button>
+	</body>
+</html>
+
+<!--
+1. screen객체의 속성
+	1> availHeight : 윈도우에서 태스크바를 제외한 영역의 높이 반환
+	2> availWidth : 윈도우에서 태스크바를 제외한 영역의 넓이 반환
+	3> colorDepth : 컬러 팔레트의 깊이를 반환
+	4> height : 태스크바 포함한 전체 높이 반환
+	5> pixelDepth : 화면의 컬러 해상도(bits per pixel)반환
+	6> width : 화면의 전체 너비 반환
+2. window객체의 메서드
+	1> resizeTo(), resizeBy() : 윈도우의 크기 재설정
+	2> scrollTo(), scrollBy() : 윈도우의 스크롤 위치 재설정
+-->

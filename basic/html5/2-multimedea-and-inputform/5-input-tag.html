@@ -1,0 +1,33 @@
+<DOCTYPE HTML>
+<html>
+	<head>
+		<title> input tag #1 </title>
+	</head>
+	<body>
+		<form name="informations" action="input.jsp" method="post">
+			id : 		<input type="text" name="id" /><br />
+			password : 	<input type="password" name="pw" /><br />
+			email : 	<input type="email" name="email" /><br />
+			URL : 		<input type="url" name="url" /><br />
+			phone :		<input type="tel" name="tel" /><br />
+			date : 		<input type="date" name="date" /><br />
+			number :	<input type="number" name="number" min="1" max="10" step="2" /><br />
+			range : 	<input type="range" name="range" min="1" max="10" step="2" /><br />
+			gender :	<input type="radio" name="gender" value="male" />남성
+						<input type="radio" name="gender" value="female" />여성<br />
+			favorite :	<input type="checkbox" name="favorite" value="surfing" />서핑
+						<input type="checkbox" name="favorite" value="movie" />영화
+						<input type="checkbox" name="favorite" value="climbing" />등산<br />
+			<input type="submit" value="제출" />
+			<input type="reset" value="초기화" />
+		</form>
+	</body>
+</html>
+
+<!--
+form의 action 속성은 입력 변수들을 처리할 jsp파일 지정
+get과 post 방식 중에 post방식으로 보냄
+input 요소에서 입력받은 값들은 name으로 지정한 변수에 저장되어 전달됨.
+radio와 checkbox 타입에서 같은 범주는 같은 name을 지정해주어야 한다.
+submit과 reset 타입에서 value값은 버튼에 나타나는 값이다.
+-->

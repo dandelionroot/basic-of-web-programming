@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+  <body>
+    <input type="button" value="fetch" onclick="
+      fetch('javascript').then(function(response) {
+        /*Asynchronous Javascript And XML
+        파일들을 var/www/html 폴더에 넣고 돌려야함
+        fetch('html').then(function(response) {
+          response.text().then(function(text){
+            document.querySelector('article').innerHTML = text;
+          })
+        })
+        */
+        if(response.status == 404)
+          alert('not found');
+      });//then은 fetch가 되고 난 이후에 실행된다, fetch.then의 첫번째 함수의 인자로 response객체가 와야한다.
+      console.log(1);
+      console.log(2);
+    ">
+  </body>
+</html>

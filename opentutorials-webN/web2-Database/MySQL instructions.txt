@@ -1,0 +1,38 @@
+*MYSQL 서버 접속
+	cd C:\~\~\mysql\bin
+	mysql -root -p
+
+*데이터베이스(스키마) 생성, 삭제, 읽기, 선택
+	CREATE DATABASE 'name'
+	DROP DATABASE 'name'
+	SHOW DATABASES
+	USE 'database name'
+
+*데이터베이스 안에서 테이블 생성 예제
+CREATE TABLE topic(
+	id INT(11) NOT NULL AUTO_INCREMENT,
+	title VARCHAR(100) NOT NULL,
+	description TEXT NULL,
+	created DATATIME NOT NULL,
+	author VARCHAR(30) NULL,
+	profile VARCHAR(100) NULL,
+	PRIMARY KEY(id)
+);
+*테이블 세부사항 확인 예제
+	DESC topic
+
+*테이블 생성 후 데이터 삽입 예제(INSERT)
+	INSERT DATA INTO topic (title, description, created, author, profile), VALUES('MongoDB', 'MongoDB is ...', NOW(), 'egoing', 'developer');
+
+*테이블 생성 후 데이터 읽기 예제(SELECT)
+	SELECT * FROM topic;
+	SELECT id, title, created, author FROM topic;
+	SELECT id, title, created, author FROM topic WHERE author='egoing';
+	SELECT id, title, created, author FROM topic WHERE author='egoing' ORDER BY id DESC;
+	SELECT id, title, created, author FROM topic WHERE author='egoing' ORDER BY id DESC LIMIT 2;
+
+*테이블 생성 후 데이터 수정 예제(UPDATE)
+	UPDATE topic SET description='Oracle is modified', title='ORACLE' WHERE id=2;
+
+*테이블 생성 후 데이터 삭제 예제(DELETE)
+	DELETE FROM topic where id=5;

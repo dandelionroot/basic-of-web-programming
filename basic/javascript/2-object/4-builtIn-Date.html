@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var today = new Date();
+			document.write(today + '<br />')
+			var d1 = new Date(2013, 7, 24, 18, 30);
+			document.write(d1.getFullYear() + '<br />');
+			document.write(d1.getMonth() + '<br />');
+			document.write(d1.getDate() + '<br />');
+			document.write(d1.getHours() + '<br />');
+			document.write(d1.getMinutes() + '<br />');
+			document.write(d1.getSeconds() + '<br />');
+			document.write(d1.getMilliseconds() + '<br />');
+			d1.setMonth(6);
+			document.write(d1.getMonth() + '<br />');
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
+<!--
+두 개의 시간대를 비교할 때는 모든 날짜를 1970년 1월 1일 이후의 밀리초로 변환 -> getTime() 메서드 사용.
+setTimeOut('functionname();', milliseconds) -> 밀리초만큼 지난다음 함수호출

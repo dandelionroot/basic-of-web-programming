@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <title>WEB1 - HTML</title>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="colors.js"></script>
+  <script>
+    function fetching(filename, selector) {
+      fetch(filename).then(function(response) {
+        response.text().then(function(text) {
+          document.querySelector(selector).innerHTML = text;
+        })
+      })
+    }
+  </script>
+</head>
+<body>
+  <h1><a href="#!welcome" onclick="fetching('welcome', 'article');">WEB</a></h1>
+  <input id="night_day" type="button" value="night" onclick="
+    nightDayHandler(this);
+  ">
+  <ol>
+    <li><a href="#!html" onclick="fetching('html', 'article');">HTML</a></li>
+    <li><a href="#!css" onclick="fetching('css', 'article');">CSS</a></li>
+    <li><a href="3.html">JavaScript</a></li>
+  </ol>
+  <article></article>
+  <script>
+  if(location.hash){//웹페이지가 로드되면 해시값을 읽어서 그 해시에 해당하는 파일을 패치해줌
+    fetching(location.hash.substr(2), 'article');
+  }else {
+    fetching('welcome', 'article');
+  }
+  </script>
+</body>
+</html>

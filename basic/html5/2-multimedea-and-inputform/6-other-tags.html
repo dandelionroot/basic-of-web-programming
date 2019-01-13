@@ -1,0 +1,40 @@
+<DOCTYPE HTML>
+<html>
+	<head>
+		<title> various tags other than input </title>
+	</head>
+	<body>
+		<form name="informations" action="get.jsp" method="post" enctype="multipart/form-data">
+			고객의 의견 : 
+			<textarea name="feedback" rows="5" cols="50"></textarea><br />
+			선호 차량 브랜드 : 
+			<select name="cars">
+				<option value="bmw">BMW</option>
+				<option value="benz">벤츠</option>
+				<option value="hyundai">현대</option>
+				<option value="kia">기아</option>
+			</select><br />
+			<fieldset>
+				<legend> 인적사항입력 </legend>
+				이름 : <input type="text"><br>
+				전화번호 : <input type="tel"><br>
+				주소 : <input type="text"><br>
+			</fieldset><br />
+			성별 :
+			<lable for="male">male</lable>
+			<input type="radio" name=gender id="male" value="male">
+			<lable for="female">female</lable>
+			<input type="radio" name=gender id="female" value="female"><br>
+			파일업로드 : 
+			<input type="file" accept="image/jpg, image/gif"><br>
+			<input type="submit" value="제출">
+		</form>
+	</body>
+</html>
+
+<!--
+lable 태그는 레이블과 input태그를 연결해 준다(레이블을 클릭하는 것과 input을 클릭하는 것은 동일)
+파일업로드시 input type="file"을 사용하는데 form태그에 enctype속성을 지정해 주어야 하며 파일형식을 input태그의 속성으로 지정해주어야 한다.
+이메일이나 전화번호 등 입력 제한조건을 걸 때 정규식이 필요한데, 이는 pattern속성에 정규식을 추가해주면 된다.
+이외에 required속성을 추가하면 반드시 채워야 하는 칸임을 설정한다.
+-->

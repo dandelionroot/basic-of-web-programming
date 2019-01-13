@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>table style</title>
+		<style>
+			table, td, th {
+				border:1px solid blue;
+			}
+			table.st2 {
+				border-collapse:collapse;
+				width:100%;
+				text-align:center;
+				vertical-align:center;
+				empty-cells:hide;
+			}
+			tr.st2 {
+				color:white; background-color:green;
+				height:100px;
+			}
+			caption { caption-side:bottom; }
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>이름</th>
+				<th>이메일</th>
+			</tr>
+			<tr>
+				<td>김철수</td>
+				<td>chulsoo@gmail.com</td>
+			</tr>
+			<tr>
+				<td>김영희</td>
+				<td>younghee@naver.com</td>
+			</tr>
+		</table>
+		<table class="st2">
+			<caption> 우리반 친구들 </caption>
+			<tr class="st2">
+				<th>이름</th>
+				<th>이메일</th>
+			</tr>
+			<tr>
+				<td>김철수</td>
+				<td>chulsoo@gmail.com</td>
+			</tr>
+			<tr>
+				<td>김영희</td>
+				<td>younghee@naver.com</td>
+			</tr>
+			<tr>
+				<td>김창민</td>
+			</tr>
+		</table>
+
+	</body>
+</html>
+<!--
+border : 테이블 경계선
+border-collapse : 이웃한 셀의 경계 합칠지 여부
+width : 테이블 가로길이
+height : 테이블 세로길이
+border-spacing : 테이블 셀 사이의 거리
+empty-cells : 빈 셀을 그릴지의 여부
+table-align : 테이블 셀 안에서의 정렬 설정
+-->

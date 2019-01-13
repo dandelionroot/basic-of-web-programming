@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function showAlert() {
+				setTimeout(function () { alert("setTimeout()을 사용하여 표시됨.") }, 3000);//호출하는 함수를 여기서 직접 정의도 가능
+			}
+		/* ----- */
+			var id;
+			function changeColor() {
+				id = setInterval("flashText()", 500);
+			}
+			function flashText() {
+				var elem = document.getElementById("target");
+				elem.style.color = (elem.style.color == "red") ? "blue" : "red";
+				elem.style.backgroundColor = (elem.style.backgroundColor == "green") ? "yellow" : "green";
+			}
+			function stopTextColor() {
+				clearInterval(id);
+			}
+		/* ----- */
+			var w;
+			function openWindow() {
+				w = window.open('', '', 'width=200, height=100', true);//true로 설정하면 기존페이지가 아니라 새로운페이지가 열림, 열고 객체를 반환하여 w에 저장
+				w.document.write("<p>나 잡아봐라</p>");//새로생성한 윈도우객체인 w에 write
+				w.moveTo(0,0);
+			}
+			function moveWindow() {
+				w.moveBy(10,10);
+				w.focus();//w윈도우로 키보드포커스 이동
+			}
+		</script>
+	</head>
+	<body onload="changeColor()">
+		<form>
+			<input type="button" value="open google" onclick="window.open('https://www.google.com', '_blank', 'width=300, height=300', true)">
+		</form>
+		<p>버튼을 누르면 3초 후에 경고창 나타남</p>
+		<button onclick="showAlert()">눌러보세요</button>
+
+		<div id="target">
+			<p>This is a Text.</p>
+		</div>
+		<button onclick="stopTextColor()">중지</button><br />
+
+		<input type="button" value="window create" onclick="openWindow()" /><br />
+		<input type="button" value="window move" onclick="moveWindow()" />
+	</body>
+</html>
+
+<!--
+1. window객체는 BOM의 최상위 객체이다.
+2. 모든 전역 변수는 윈도우 객체의 속성이며, 모든 전역 함수(ex, alert()..)는 윈도우 객체의 메서드이다.
+3. alert("")와 window.alert("")는 같은 의미이다.
+4. setTimeout(code, millisec) -> millisec 이후에 코드 실행
+5. setInterval(code, millisec) -> millisec 간격으로 코드 실행, clearInterval(setInterval의 반환값) -> 중지
+6. w.moveTo(), w.moveBy() -> 윈도우를 이동
+-->

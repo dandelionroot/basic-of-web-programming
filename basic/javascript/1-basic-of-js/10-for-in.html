@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var myCar = { make:"BMW", model:"X5", year:"2013" };
+			var txt = "";
+			var txt2 = "";
+			for(var x in myCar) { //myCar라는 객체에서 x는 attribute, myCar[x]는 속성값
+				txt = txt + x + " ";
+				txt2 = txt2 + myCar[x] + " ";
+			}
+			document.write(txt + "<br />");
+			document.write(txt2);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

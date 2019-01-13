@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <title>WEB1 - HTML</title>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="colors.js"></script>
+  <script>
+    function fetching(filename, selector) {
+      fetch(filename).then(function(response) {
+        response.text().then(function(text) {
+          document.querySelector(selector).innerHTML = text;
+        })
+      })
+    }
+  </script>
+</head>
+<body>
+  <h1><a href="#!welcome" onclick="fetching('welcome', 'article');">WEB</a></h1>
+  <input id="night_day" type="button" value="night" onclick="
+    nightDayHandler(this);
+  ">
+  <ol id="nav">
+  </ol>
+  <article></article>
+  <script>
+  if(location.hash){//웹페이지가 로드되면 해시값을 읽어서 그 해시에 해당하는 파일을 패치해줌 -> url 공유가 가능
+    fetching(location.hash.substr(2), 'article');
+  }else {
+    fetching('welcome', 'article');
+  }
+  fetch('list').then(function(response) {
+    response.text().then(function(text) {
+      console.log(text);
+      var items = text.split(',');
+      console.log(items);
+      var i=0;
+      var tags = '';
+      while(i < items.length) {
+        var item = items[i];
+        item = item.trim();
+        console.log(item);
+        //<li><a href="#!html" onclick="fetchPage('html')">html</a><li>
+        var tag = '<li><a href="#!' + item + '" onclick="fetching(\'' + item + '\', \'article\')">' + item + '</a></li>';
+        console.log(tag);
+        tags += tag;
+        i++;
+      }
+      document.querySelector('#nav').innerHTML = tags;
+    })
+  })
+  </script>
+</body>
+</html>
